@@ -56,6 +56,9 @@ function Echo(text){
 }
 
 function SpongeBob(text){
+    document.getElementById("consoleText").innerHTML += "<br><img src='img/mockingSpongebob.jpg' width='20%'>";
+    console.log(document.getElementById("consoleText").innerHTML);
+
     var writeText = "";
     for(var i = 1; i < text.length; i++){
         var partText = text[i];
