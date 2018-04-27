@@ -13,9 +13,9 @@ function ValidateCommand(command){
 
 function ExcecuteCommand(command){
     command[0] = command[0].toLowerCase();
-    if(command[0] == "echo" || command[0] == "cls"){
+    if(command[0] == "echo"){
         Echo(command);
-    }else if(command[0] == "clear"){
+    }else if(command[0] == "clear" || command[0] == "cls"){
         Clear();
     }else if(command[0] == "help"){
         Help();
