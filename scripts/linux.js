@@ -91,6 +91,12 @@ function onKeyDown(e){
     console.log("Button Pressed: " + key);
     
     if(key == "Enter"){
+        var text = consoleTextElement.innerHTML;
+        if(text[text.length - 1] == '_'){
+            text = text.slice(0,-1);
+            consoleTextElement.innerHTML = text;
+        }
+
         var addText = "";
         if(textWritten != ""){
             var valid = ValidateCommand(textWritten);

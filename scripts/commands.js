@@ -1,4 +1,4 @@
-var commands = ["help", "echo", "clear", "cls", "spongebob"];
+var commands = ["help", "echo", "clear", "cls"];
 
 function ValidateCommand(command){
     var newCommand = command.split(" ");
@@ -19,8 +19,6 @@ function ExcecuteCommand(command){
         Clear();
     }else if(command[0] == "help"){
         Help();
-    }else if(command[0] == "spongebob"){
-        SpongeBob(command);
     }
 }
 
@@ -53,26 +51,6 @@ function Echo(text){
     }else{
         write("\nECHO is " + (echo ? "on" : "off"));
     }
-}
-
-function SpongeBob(text){
-    document.getElementById("consoleText").innerHTML += "<br><img src='img/mockingSpongebob.jpg' width='20%'>";
-    console.log(document.getElementById("consoleText").innerHTML);
-
-    var writeText = "";
-    for(var i = 1; i < text.length; i++){
-        var partText = text[i];
-        for(var j = 0; j < text[i].length; j++){
-            if(j % 2 == 0){
-                partText = partText.replaceAt(j, partText[j].toLowerCase());
-            }else{
-                partText = partText.replaceAt(j, partText[j].toUpperCase());
-            }
-        }
-        text[i] = partText;
-        writeText += text[i] + " ";
-    }
-    write("\n" + writeText);
 }
 
 String.prototype.replaceAt=function(index, replacement) {
